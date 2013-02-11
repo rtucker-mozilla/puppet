@@ -1809,8 +1809,15 @@ class Type
 
     self.validate if self.respond_to?(:validate)
   end
-
+  self.finished
   private
+
+  # Method to run at the end.
+  # Somewhat like a garbage collector i guess
+  def finished
+    # Currently do nothing here, but make this available
+    # to be called from a custom type
+  end
 
   # Set our resource's name.
   def set_name(hash)
